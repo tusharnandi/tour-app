@@ -1,3 +1,5 @@
+# Step-1
+
 1. <html ng-app>
 The ng-app attribute represents an AngularJS directive
 This directive is used to flag the HTML element that AngularJS should consider to be the root element of our application. 
@@ -9,8 +11,9 @@ This gives application developers the freedom to tell AngularJS if the entire HT
 3. Nothing here {{'yet' + '!'}}
 The binding tells AngularJS that it should evaluate an expression and insert the result into the DOM in place of the binding.
 
-Explaination
-Bootstrapping AngularJS Applications
+# Explaination
+
+### Bootstrapping AngularJS Applications
 
 Bootstrapping AngularJS applications automatically using the ngApp directive is very easy and suitable for most cases.
 
@@ -58,3 +61,11 @@ The data model (a simple array of phones in object literal notation) is now inst
 add app.spec.js file.
 
 and testing command: npm test
+
+
+# Step-3 Compoents
+
+Since this combination (template + controller) is such a common and recurring pattern, AngularJS provides an easy and concise way to combine them together into reusable and isolated entities, known as components. Additionally, AngularJS will create a so called isolate scope for each instance of our component, which means no prototypal inheritance and no risk of our component affecting other parts of the application or vice versa.
+To create a component, we use the .component() method of an AngularJS module. We must provide the name of the component and the Component Definition Object (CDO for short).
+
+

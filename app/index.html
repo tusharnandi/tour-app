@@ -1,20 +1,19 @@
 <!doctype html>
 <html lang="en" ng-app="tourApp">
-  <head>
+<head>
     <meta charset="utf-8">
-    <title>My HTML File</title>
+    <title>
+        AngularJS Tour activity Application
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css" />
     <script src="lib/angular/angular.js"></script>
     <script src="app.js"></script>
-  </head>
-  <body ng-controller="PhotoListController">
+    <script src="photo-list.component.js"></script>
+</head>
+  <body>
 
-    <ul>
-      <li ng-repeat="photo in photos">
-        <span>{{photo.name}}</span>
-        <p>{{photo.snippet}}</p>
-      </li>
-    </ul>  
-
+      <!-- Use a custom component to render a list of photos -->
+      <photo-list></photo-list>  <!-- This tells AngularJS to instantiate a `photoList` component here. -->
   </body>
 </html>

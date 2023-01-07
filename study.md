@@ -86,3 +86,22 @@ Create new file app/phone-list/phone-list.template.html
 At runtime, when AngularJS needs to create an instance of the phoneList component, it will make an HTTP request to get the template from app/phone-list/phone-list.template.html.
 
 The URL is relative to our `index.html` file on component
+
+
+# Step-5 Filtering Repeaters and e2e testing
+We will also write an end-to-end (E2E) test, because a good E2E test is a good friend. It stays with your app, keeps an eye on it, and quickly detects regressions.
+
+## Testing
+In previous steps, we learned how to write and run unit tests. Unit tests are perfect for testing controllers and other parts of our application written in JavaScript, but they can't easily test templates, DOM manipulation or interoperability of components and services. For these, an end-to-end (E2E) test is a much better choice.
+
+The search feature was fully implemented via templates and data-binding, so we'll write our first E2E test, to verify that the feature works.
+
+Much like Karma is the test runner for unit tests, we use Protractor to run E2E tests. 
+Try it with 
+
+``` 
+	npm run protractor
+```
+
+E2E tests take time, so unlike with unit tests, Protractor will exit after the tests run and will not automatically rerun the test suite 
+on every file change. To rerun the test suite, execute *npm run protractor* again.

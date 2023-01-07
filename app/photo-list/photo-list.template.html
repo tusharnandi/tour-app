@@ -1,6 +1,13 @@
-<ul class="list-group">
-    <li ng-repeat="photo in $ctrl.photos" class="list-group-item">
-        <span>{{photo.name}}</span>
-        <p>{{photo.snippet}}</p>
-    </li>
-</ul>
+<div class="row">
+    <div class="col"> Search: <input ng-model="$ctrl.query" /></div>
+</div>
+<div class="row">
+    <div class="col">
+        <ul class="list-group">
+            <li class="list-group-item" ng-repeat="photo in $ctrl.photos | filter:$ctrl.query" >
+                <span>{{photo.name}}</span>
+                <p>{{photo.snippet}}</p>
+            </li>
+        </ul>
+    </div>
+</div>

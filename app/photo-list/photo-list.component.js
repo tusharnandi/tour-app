@@ -1,14 +1,9 @@
 // Register `phoneList` component, along with its associated controller and template
 angular.
-    module('tourApp').
+    module('photoListModule').
     component('photoList', {  // This name is what AngularJS uses to match to the `<phone-list>` element.
-        template:
-            '<ul class="list-group">' +
-            '<li ng-repeat="photo in $ctrl.photos" class="list-group-item">' +
-            '<span>{{photo.name}}</span>' +
-            '<p>{{photo.snippet}}</p>' +
-            '</li>' +
-            '</ul>',
+        templateUrl: 'photo-list/photo-list.template.html',
+
         controller: function PhotoListController() {
             this.photos = [
                 {

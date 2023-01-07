@@ -69,3 +69,20 @@ Since this combination (template + controller) is such a common and recurring pa
 To create a component, we use the .component() method of an AngularJS module. We must provide the name of the component and the Component Definition Object (CDO for short).
 
 
+# Step-4 File Organization
+
+## Organizing by Feature
+we are going to group our files into directories by feature. For example, since we have a section in our application that lists phones, we will put all related files into a phone-list/ directory under app/. We are soon to find out that certain features are used across different parts of the application. We will put those inside app/core/.
+
+## Using Modules
+As previously mentioned, one of the benefits of having a modular architecture is code reuse — not only inside the same application, but across applications too. There is one final step in making this code reuse frictionless:
+
+Each feature/section should declare its own module and all related entities should register themselves on that module.
+
+
+## External Templates
+Create new file app/phone-list/phone-list.template.html
+
+At runtime, when AngularJS needs to create an instance of the phoneList component, it will make an HTTP request to get the template from app/phone-list/phone-list.template.html.
+
+The URL is relative to our `index.html` file on component

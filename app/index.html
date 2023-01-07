@@ -1,14 +1,20 @@
 <!doctype html>
-<html lang="en" ng-app>
+<html lang="en" ng-app="tourApp">
   <head>
     <meta charset="utf-8">
     <title>My HTML File</title>
     <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css" />
     <script src="lib/angular/angular.js"></script>
+    <script src="app.js"></script>
   </head>
-  <body>
+  <body ng-controller="PhotoListController">
 
-    <p>Nothing here {{'yet' + '!'}}</p>
+    <ul>
+      <li ng-repeat="photo in photos">
+        <span>{{photo.name}}</span>
+        <p>{{photo.snippet}}</p>
+      </li>
+    </ul>  
 
   </body>
 </html>

@@ -42,5 +42,19 @@ package.json
 -- define application metadata, dependency, dev dependency, script to star app, perform testing (unit testing, e2e testing)
  
 
+# Step-2
 
+For AngularJS applications, we encourage the use of the Model-View-Controller (MVC) design pattern to decouple the code and separate concerns. With that in mind, let's use a little AngularJS and JavaScript to add models, views, and controllers to our app.
 
+## View
+In AngularJS, the view is a projection of the model through the HTML template. This means that whenever the model changes, AngularJS refreshes the appropriate binding points, which updates the view.
+
+## Model & Controller
+
+The data model (a simple array of phones in object literal notation) is now instantiated within the PhoneListController controller. The controller is simply a constructor function that takes a $scope parameter:
+
+### Setup Unit testing Karma
+
+add app.spec.js file.
+
+and testing command: npm test

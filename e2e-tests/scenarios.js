@@ -5,11 +5,18 @@
 
 describe('Tour App', function() {
 
-    describe('photoList', function () {
+    //Case 4
+    it('should redirect `index.html` to `index.html#!/photos', function() {
+        browser.get('index.html');
+        expect(browser.getCurrentUrl()).toContain('index.html#!/photos');
+      });
+
+
+    describe('View: Photo list', function () {
 
         //////////
         beforeEach(function () {
-            browser.get('index.html');
+            browser.get('index.html#!/phones');
         });
 
         it('should filter the photo list as a user types into the search box', function () {
@@ -67,9 +74,25 @@ describe('Tour App', function() {
             query.sendKeys('nexus');
 
             element.all(by.css('.photo-list li a')).first().click();
-            expect(browser.getCurrentUrl()).toContain('index.html#!/phones/nexus-s');
+            expect(browser.getCurrentUrl()).toContain('index.html#!/photos/nexus-s');
         });
         //End Case 3
+
+        
+
+
     });
   
+    //Case 5
+    describe('View Photo Details',function(){
+
+        beforeEach(function(){
+            browser.get('index.html#!/photos/nexus-s');
+        });
+
+        it('should display placeholder page with `photoId`', function() {
+            expect(element(by.binding('$ctrl.photoId')).getText()).toBe('nexus-s');
+          });
+        
+    });
 });

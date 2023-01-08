@@ -75,7 +75,7 @@ To create a component, we use the .component() method of an AngularJS module. We
 we are going to group our files into directories by feature. For example, since we have a section in our application that lists phones, we will put all related files into a phone-list/ directory under app/. We are soon to find out that certain features are used across different parts of the application. We will put those inside app/core/.
 
 ## Using Modules
-As previously mentioned, one of the benefits of having a modular architecture is code reuse — not only inside the same application, but across applications too. There is one final step in making this code reuse frictionless:
+As previously mentioned, one of the benefits of having a modular architecture is code reuse ï¿½ not only inside the same application, but across applications too. There is one final step in making this code reuse frictionless:
 
 Each feature/section should declare its own module and all related entities should register themselves on that module.
 
@@ -115,4 +115,34 @@ For windows, we need to run the command below:
 
 # 6 - Two-way Data Binding
 Very simple two way binding example.
+
+# 9 - Routing & Multiple Views
+
+## Dependencies
+Since we are using npm to install client-side dependencies, this step updates the package.json configuration file to include the new dependency:
+
+The new dependency "angular-route": "1.8.x" tells npm to install a version of the angular-route module that is compatible with version 1.8.x of AngularJS. We must tell npm to download and install this dependency.
+
+## Multiple Views, Routing and Layout Templates
+To add the detailed view, we are going to turn index.html into what we call a "layout template". This is a template that is common for all views in our application. Other "partial templates" are then included into this layout template depending on the current "route" â€” the view that is currently displayed to the user.
+
+Application routes in AngularJS are declared via the `$routeProvider`, which is the provider of the `$route` service. This service makes it easy to wire together 'controllers', 'view templates', and the 'current URL location' in the browser. Using this feature, we can implement deep linking, which lets us utilize the browser's history (back and forward navigation) and bookmarks.
+
+## A Note about DI, Injector and Providers
+
+As you noticed, dependency injection (DI) is at the core of AngularJS, so it's important for you to understand a thing or two about how it works.
+
+When the application bootstraps, AngularJS creates an injector that will be used to find and inject all of the services that are required by your application. The injector itself doesn't know anything about what the $http or $route services do. In fact, the injector doesn't even know about the existence of these services, unless it is configured with proper module definitions.
+
+The injector only carries out the following steps:
+
+ - Load the module definition(s) that you specify in your application.
+ - Register all Providers defined in these module definition(s).
+ - When asked to do so, lazily instantiate services and their dependencies, via their - Providers, as parameters to an injectable function.
+
+Providers are objects that provide (create) instances of services and expose configuration APIs, that can be used to control the creation and runtime behavior of a service. In case of the `$route` service, the `$routeProvider` exposes APIs that allow you to define routes for your application.
+
+## Template
+
+The `$route` service is usually used in conjunction with the ``ngView`` directive. The role of the ``ngView`` directive is to include the view template for the current route into the layout template. This makes it a perfect fit for our index.html template.
 

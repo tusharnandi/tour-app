@@ -12,10 +12,10 @@
     <div class="col">
         <ul class="list-group photo-list">
             <li class="list-group-item" ng-repeat="photo in $ctrl.photos | filter:$ctrl.query  | orderBy:$ctrl.orderProp" >
-                <a href="#!/phones/{{photo.id}}" class="thumb">
+                <a href="#!/photos/{{photo.id}}" class="thumb">
                     <img ng-src="{{photo.imageUrl}}" alt="{{photo.name}}" />
                 </a>
-                <a href="#!/phones/{{photo.id}}">{{photo.name}}</a>
+                <a href="#!/photos/{{photo.id}}">{{photo.name}}</a>
                 <p>{{photo.snippet}}</p>
             </li>
         </ul>

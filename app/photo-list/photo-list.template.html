@@ -1,10 +1,17 @@
 <div class="row">
-    <div class="col"> Search: <input ng-model="$ctrl.query" /></div>
+    <div class="col">
+        <span>Search: <input ng-model="$ctrl.query" /></span>
+        <span>Sort by: <select ng-model="$ctrl.orderProp">
+                        <option value="name">Alphabetical</option>
+                        <option value="age">Newest</option>
+                    </select>
+        </span>
+    </div>
 </div>
 <div class="row">
     <div class="col">
         <ul class="list-group">
-            <li class="list-group-item" ng-repeat="photo in $ctrl.photos | filter:$ctrl.query" >
+            <li class="list-group-item" ng-repeat="photo in $ctrl.photos | filter:$ctrl.query  | orderBy:$ctrl.orderProp" >
                 <span>{{photo.name}}</span>
                 <p>{{photo.snippet}}</p>
             </li>

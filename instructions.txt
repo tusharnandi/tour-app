@@ -31,6 +31,9 @@ tasks that you will need while developing:
  - npm run protractor: Run the Protractor end-to-end (E2E) tests.
  - npm run update-webdriver: Install the drivers needed by Protractor.
 
+ ```
+ taskkill /IM chromedriver_108.0.5359.71.exe /F
+ ```
 6. Install Hellper Tool (optional)
 The Http-Server, Karma and Protractor modules are also 
 executables, which can be installed globally and run 

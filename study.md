@@ -105,3 +105,14 @@ Try it with
 
 E2E tests take time, so unlike with unit tests, Protractor will exit after the tests run and will not automatically rerun the test suite 
 on every file change. To rerun the test suite, execute *npm run protractor* again.
+
+Notied that when we try to run next time, there is error occured.we need to kill the process (_chromedriver_108.0.5359.71.exe_)
+
+For windows, we need to run the command below:
+```
+ taskkill /IM chromedriver_108.0.5359.71.exe /F
+```
+
+# 6 - Two-way Data Binding
+Very simple two way binding example.
+

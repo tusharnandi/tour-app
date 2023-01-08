@@ -31,6 +31,37 @@ describe('Tour App', function() {
         });
 
         //////////
+
+        //Case 2
+        it('should be possible to control photo order via the drop-down menu', function () {
+            var queryField = element(by.model('$ctrl.query'));
+            var orderSelect = element(by.model('$ctrl.orderProp'));
+            var nameOption = orderSelect.element(by.css('option[value="name"]'));
+            var photoNameColumn = element.all(by.repeater('photo in $ctrl.photos').column('photo.name'));
+
+            function getNames() {
+                return photoNameColumn.map(function (elem) {
+                    return elem.getText();
+                });
+            }
+
+            queryField.sendKeys('5G');   // Let's narrow the dataset to make the assertions shorter
+
+            expect(getNames()).toEqual([
+                'MOTOROLA G72',
+                'MOTOROLA G62 5G'
+                
+                
+            ]);
+
+            nameOption.click();
+
+            expect(getNames()).toEqual([
+                'MOTOROLA G62 5G',
+                'MOTOROLA G72'
+            ]);
+        });
+        // End Case 2
     });
   
 });

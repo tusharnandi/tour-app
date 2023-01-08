@@ -2,6 +2,8 @@ logs/*
 !.gitkeep
 node_modules/
 app/lib/
+.vs/*
 tmp
 .DS_Store
 .idea
+.suo

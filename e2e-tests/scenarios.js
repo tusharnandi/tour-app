@@ -18,14 +18,14 @@ describe('Tour App', function() {
 
             var query = element(by.model('$ctrl.query'));
 
-            expect(photoList.count()).toBe(3);
+            expect(photoList.count()).toBe(20);
 
             query.sendKeys('nexus');
             expect(photoList.count()).toBe(1);
 
             query.clear();
             query.sendKeys('motorola');
-            expect(photoList.count()).toBe(2);
+            expect(photoList.count()).toBe(8);
 
 
         });
@@ -45,11 +45,11 @@ describe('Tour App', function() {
                 });
             }
 
-            queryField.sendKeys('5G');   // Let's narrow the dataset to make the assertions shorter
+            queryField.sendKeys('Dell');   // Let's narrow the dataset to make the assertions shorter
 
             expect(getNames()).toEqual([
-                'MOTOROLA G72',
-                'MOTOROLA G62 5G'
+                'Dell Streak 7',
+                'Dell Venue'
                 
                 
             ]);
@@ -57,8 +57,9 @@ describe('Tour App', function() {
             nameOption.click();
 
             expect(getNames()).toEqual([
-                'MOTOROLA G62 5G',
-                'MOTOROLA G72'
+                'Dell Streak 7',
+                'Dell Venue'
+
             ]);
         });
         // End Case 2

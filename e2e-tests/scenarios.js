@@ -49,9 +49,7 @@ describe('Tour App', function() {
 
             expect(getNames()).toEqual([
                 'Dell Streak 7',
-                'Dell Venue'
-                
-                
+                'Dell Venue'   
             ]);
 
             nameOption.click();
@@ -59,10 +57,19 @@ describe('Tour App', function() {
             expect(getNames()).toEqual([
                 'Dell Streak 7',
                 'Dell Venue'
-
             ]);
         });
         // End Case 2
+
+        //Case 3
+        it('should render phone specific links', function () {
+            var query = element(by.model('$ctrl.query'));
+            query.sendKeys('nexus');
+
+            element.all(by.css('.photo-list li a')).first().click();
+            expect(browser.getCurrentUrl()).toContain('index.html#!/phones/nexus-s');
+        });
+        //End Case 3
     });
   
 });

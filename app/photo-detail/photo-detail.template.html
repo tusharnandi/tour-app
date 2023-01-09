@@ -1,0 +1,24 @@
+<img ng-src="{{$ctrl.photo.images[0]}}" class="photo" />
+
+<h1>{{$ctrl.photo.name}}</h1>
+
+<p>{{$ctrl.photo.description}}</p>
+
+<ul class="photo-thumbs">
+  <li ng-repeat="img in $ctrl.photo.images">
+    <img ng-src="{{img}}" />
+  </li>
+</ul>
+<ul class="specs">
+  <li>
+    <span>Availability and Networks</span>
+    <dl>
+      <dt>Availability</dt>
+      <dd ng-repeat="availability in $ctrl.photo.availability">{{availability}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Additional Features</span>
+    <dd>{{$ctrl.photo.additionalFeatures}}</dd>
+  </li>
+</ul>

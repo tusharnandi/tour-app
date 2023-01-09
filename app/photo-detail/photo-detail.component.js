@@ -1,10 +1,13 @@
 angular.
   module('photoDetailModule').
   component('photoDetail', {
-    template: 'TBD: Detail view for <span>{{$ctrl.photoId}}</span>',
-    controller: ['$routeParams',
-      function PhotoDetailController($routeParams) {
-        this.photoId = $routeParams.photoId;
+    templateUrl: 'photo-detail/photo-detail.template.html',
+    controller: ['$http','$routeParams',
+      function PhotoDetailController($http,$routeParams) {
+        var self = this;
+        $http.get('phones/' + $routeParams.photoId + '.json').then(function(response) {
+          self.photo = response.data;
+        });
       }
     ]
   });

@@ -90,8 +90,8 @@ describe('Tour App', function() {
             browser.get('index.html#!/photos/nexus-s');
         });
 
-        it('should display placeholder page with `photoId`', function() {
-            expect(element(by.binding('$ctrl.photoId')).getText()).toBe('nexus-s');
+        it('should display the `nexus-s` page', function() {
+            expect(element(by.binding('$ctrl.photo.name')).getText()).toBe('Nexus S');
           });
         
     });

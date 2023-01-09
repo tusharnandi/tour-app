@@ -22,3 +22,10 @@
     <dd>{{$ctrl.photo.additionalFeatures}}</dd>
   </li>
 </ul>
+
+<dl>
+  <dt>Infrared</dt>
+  <dd>{{$ctrl.photo.connectivity.infrared | checkmark}}</dd>
+  <dt>GPS</dt>
+  <dd>{{$ctrl.photo.connectivity.gps | checkmark}}</dd>
+</dl>
